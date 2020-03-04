@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Erik Seguinte">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Using data from Kaggle&rsquo;s The Movies Dataset , let&rsquo;s determine what makes the best movies. The Data set gives us ratings from The Movie Database(tMDb), where movies are rated out of 10. And the top 10 movies are:
+   ID title vote_average vote_count     238 The Godfather 8.5 6024   278 The Shawshank Redemption 8.5 8358   129 Spirited Away 8.3 3968   155 The Dark Knight 8.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/movie_data/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#795548">
+  
+
+  
+  
+  
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono%7CLora:400,700%7CRoboto:400,700&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/movie_data/">
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@Primefactorx01">
+  <meta property="twitter:creator" content="@Primefactorx01">
+  
+  <meta property="og:site_name" content="Academic">
+  <meta property="og:url" content="/post/movie_data/">
+  <meta property="og:title" content="What makes the best movie? | Academic">
+  <meta property="og:description" content="Using data from Kaggle&rsquo;s The Movies Dataset , let&rsquo;s determine what makes the best movies. The Data set gives us ratings from The Movie Database(tMDb), where movies are rated out of 10. And the top 10 movies are:
+   ID title vote_average vote_count     238 The Godfather 8.5 6024   278 The Shawshank Redemption 8.5 8358   129 Spirited Away 8.3 3968   155 The Dark Knight 8."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-03-03T19:21:02-08:00">
+    
+    <meta property="article:modified_time" content="2020-03-03T19:21:02-08:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/movie_data/"
+  },
+  "headline": "What makes the best movie?",
+  
+  "datePublished": "2020-03-03T19:21:02-08:00",
+  "dateModified": "2020-03-03T19:21:02-08:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Erik Seguinte"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Academic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "img//"
+    }
+  },
+  "description": "Using data from Kaggle\u0026rsquo;s The Movies Dataset , let\u0026rsquo;s determine what makes the best movies. The Data set gives us ratings from The Movie Database(tMDb), where movies are rated out of 10. And the top 10 movies are:\n   ID title vote_average vote_count     238 The Godfather 8.5 6024   278 The Shawshank Redemption 8.5 8358   129 Spirited Away 8.3 3968   155 The Dark Knight 8."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>What makes the best movie? | Academic</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Academic</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Academic</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#hero"><span>Demo</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/courses/"><span>Courses</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>What makes the best movie?</h1>
+
+  
+  <p class="page-subtitle">Analyzing data to determine the best movies.</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Mar 3, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>Using data from Kaggle&rsquo;s 
+<a href="https://www.kaggle.com/rounakbanik/the-movies-dataset" target="_blank" rel="noopener">The Movies Dataset</a>
+, let&rsquo;s determine what makes the best movies.
+The Data set gives us ratings from The Movie Database(tMDb), where movies are rated out of 10. And the top 10 movies are:</p>
+<table>
+<thead>
+<tr>
+<th align="right">ID</th>
+<th align="left">title</th>
+<th align="right">vote_average</th>
+<th align="right">vote_count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">238</td>
+<td align="left">The Godfather</td>
+<td align="right">8.5</td>
+<td align="right">6024</td>
+</tr>
+<tr>
+<td align="right">278</td>
+<td align="left">The Shawshank Redemption</td>
+<td align="right">8.5</td>
+<td align="right">8358</td>
+</tr>
+<tr>
+<td align="right">129</td>
+<td align="left">Spirited Away</td>
+<td align="right">8.3</td>
+<td align="right">3968</td>
+</tr>
+<tr>
+<td align="right">155</td>
+<td align="left">The Dark Knight</td>
+<td align="right">8.3</td>
+<td align="right">12269</td>
+</tr>
+<tr>
+<td align="right">240</td>
+<td align="left">The Godfather: Part II</td>
+<td align="right">8.3</td>
+<td align="right">3418</td>
+</tr>
+<tr>
+<td align="right">424</td>
+<td align="left">Schindler&rsquo;s List</td>
+<td align="right">8.3</td>
+<td align="right">4436</td>
+</tr>
+<tr>
+<td align="right">510</td>
+<td align="left">One Flew Over the Cuckoo&rsquo;s Nest</td>
+<td align="right">8.3</td>
+<td align="right">3001</td>
+</tr>
+<tr>
+<td align="right">539</td>
+<td align="left">Psycho</td>
+<td align="right">8.3</td>
+<td align="right">2405</td>
+</tr>
+<tr>
+<td align="right">550</td>
+<td align="left">Fight Club</td>
+<td align="right">8.3</td>
+<td align="right">9678</td>
+</tr>
+<tr>
+<td align="right">637</td>
+<td align="left">Life Is Beautiful</td>
+<td align="right">8.3</td>
+<td align="right">3643</td>
+</tr>
+</tbody>
+</table>
+<p>But that&rsquo;s not the whole story. Included in the database is a set of 26,024,289 individual ratings by users. Since we&rsquo;re not making individual movie recomendations &ndash; that&rsquo;s another unit &ndash; let&rsquo;s aggregate the scores into a mean, merge them into the movie database, and see how that compares to the tMDB ratings. After averaging, we get the following top 10.</p>
+<table>
+<thead>
+<tr>
+<th align="right">ID</th>
+<th align="left">title</th>
+<th align="right">rating</th>
+<th align="right">num_votes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">858</td>
+<td align="left">Sleepless in Seattle</td>
+<td align="right">4.33981</td>
+<td align="right">57070</td>
+</tr>
+<tr>
+<td align="right">527</td>
+<td align="left">Once Were Warriors</td>
+<td align="right">4.26653</td>
+<td align="right">67662</td>
+</tr>
+<tr>
+<td align="right">2019</td>
+<td align="left">Hard Target</td>
+<td align="right">4.25507</td>
+<td align="right">13994</td>
+</tr>
+<tr>
+<td align="right">2959</td>
+<td align="left">License to Wed</td>
+<td align="right">4.23072</td>
+<td align="right">60024</td>
+</tr>
+<tr>
+<td align="right">1213</td>
+<td align="left">The Talented Mr. Ripley</td>
+<td align="right">4.17829</td>
+<td align="right">33987</td>
+</tr>
+<tr>
+<td align="right">926</td>
+<td align="left">Galaxy Quest</td>
+<td align="right">4.17458</td>
+<td align="right">5453</td>
+</tr>
+<tr>
+<td align="right">296</td>
+<td align="left">Terminator 3: Rise of the Machines</td>
+<td align="right">4.16998</td>
+<td align="right">87901</td>
+</tr>
+<tr>
+<td align="right">2324</td>
+<td align="left">Local Color</td>
+<td align="right">4.16706</td>
+<td align="right">25245</td>
+</tr>
+<tr>
+<td align="right">1248</td>
+<td align="left">Hannibal Rising</td>
+<td align="right">4.15724</td>
+<td align="right">5199</td>
+</tr>
+<tr>
+<td align="right">950</td>
+<td align="left">Ice Age: The Meltdown</td>
+<td align="right">4.15008</td>
+<td align="right">3628</td>
+</tr>
+</tbody>
+</table>
+<p>It&rsquo;s a very different list, with zero overlap. If only there was a way to scale or combine them. But we&rsquo;re not done yet. There&rsquo;s another way you could define the best movies. And this is the one the studios care about. How much money they made. The Dataset also provides revenue, so let&rsquo;s see what that list looks like.</p>
+<table>
+<thead>
+<tr>
+<th align="right">ID</th>
+<th align="left">title</th>
+<th align="right">revenue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">597</td>
+<td align="left">Titanic</td>
+<td align="right">1.84503e+09</td>
+</tr>
+<tr>
+<td align="right">122</td>
+<td align="left">The Lord of the Rings: The Return of the King</td>
+<td align="right">1.11889e+09</td>
+</tr>
+<tr>
+<td align="right">58</td>
+<td align="left">Pirates of the Caribbean: Dead Man&rsquo;s Chest</td>
+<td align="right">1.06566e+09</td>
+</tr>
+<tr>
+<td align="right">1865</td>
+<td align="left">Pirates of the Caribbean: On Stranger Tides</td>
+<td align="right">1.04571e+09</td>
+</tr>
+<tr>
+<td align="right">155</td>
+<td align="left">The Dark Knight</td>
+<td align="right">1.00456e+09</td>
+</tr>
+<tr>
+<td align="right">671</td>
+<td align="left">Harry Potter and the Philosopher&rsquo;s Stone</td>
+<td align="right">9.76476e+08</td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td align="left">Finding Nemo</td>
+<td align="right">9.40336e+08</td>
+</tr>
+<tr>
+<td align="right">767</td>
+<td align="left">Harry Potter and the Half-Blood Prince</td>
+<td align="right">9.33959e+08</td>
+</tr>
+<tr>
+<td align="right">121</td>
+<td align="left">The Lord of the Rings: The Two Towers</td>
+<td align="right">9.26287e+08</td>
+</tr>
+<tr>
+<td align="right">1893</td>
+<td align="left">Star Wars: Episode I - The Phantom Menace</td>
+<td align="right">9.24318e+08</td>
+</tr>
+</tbody>
+</table>
+<p>Another new list. But that&rsquo;s not quite right. The value of a dollar has changed over time. 1 billion 1920 dollars isn&rsquo;t the same as 1 billion 2020 dollars. So using a third dataset provided by the federal government, we can adjust the values based on the year that these movies were released.</p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">title</th>
+<th align="right">adjusted_revenue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">11</td>
+<td align="left">Star Wars</td>
+<td align="right">3.02873e+09</td>
+</tr>
+<tr>
+<td align="right">597</td>
+<td align="left">Titanic</td>
+<td align="right">2.72113e+09</td>
+</tr>
+<tr>
+<td align="right">601</td>
+<td align="left">E.T. the Extra-Terrestrial</td>
+<td align="right">1.94532e+09</td>
+</tr>
+<tr>
+<td align="right">1891</td>
+<td align="left">The Empire Strikes Back</td>
+<td align="right">1.54683e+09</td>
+</tr>
+<tr>
+<td align="right">329</td>
+<td align="left">Jurassic Park</td>
+<td align="right">1.50785e+09</td>
+</tr>
+<tr>
+<td align="right">122</td>
+<td align="left">The Lord of the Rings: The Return of the King</td>
+<td align="right">1.4399e+09</td>
+</tr>
+<tr>
+<td align="right">238</td>
+<td align="left">The Godfather</td>
+<td align="right">1.38727e+09</td>
+</tr>
+<tr>
+<td align="right">1892</td>
+<td align="left">Return of the Jedi</td>
+<td align="right">1.36123e+09</td>
+</tr>
+<tr>
+<td align="right">1893</td>
+<td align="left">Star Wars: Episode I - The Phantom Menace</td>
+<td align="right">1.31364e+09</td>
+</tr>
+<tr>
+<td align="right">671</td>
+<td align="left">Harry Potter and the Philosopher&rsquo;s Stone</td>
+<td align="right">1.30554e+09</td>
+</tr>
+</tbody>
+</table>
+<p>So now we have 3 different metrics with scales that go from 0-5 for one, to billions for another. Which should we use to determine the best movie? With the magic of principle component analysis, we don&rsquo;t have to decide! After waving the PCA wand combining the ratings from 2 different databases along with the adjusted revenue, we get the following top 10 movies.</p>
+<table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="left">title</th>
+<th align="right">PCA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">11</td>
+<td align="left">Star Wars</td>
+<td align="right">8.86514</td>
+</tr>
+<tr>
+<td align="right">597</td>
+<td align="left">Titanic</td>
+<td align="right">7.50724</td>
+</tr>
+<tr>
+<td align="right">601</td>
+<td align="left">E.T. the Extra-Terrestrial</td>
+<td align="right">5.27108</td>
+</tr>
+<tr>
+<td align="right">1891</td>
+<td align="left">The Empire Strikes Back</td>
+<td align="right">4.81926</td>
+</tr>
+<tr>
+<td align="right">238</td>
+<td align="left">The Godfather</td>
+<td align="right">4.75741</td>
+</tr>
+<tr>
+<td align="right">122</td>
+<td align="left">The Lord of the Rings: The Return of the King</td>
+<td align="right">4.51399</td>
+</tr>
+<tr>
+<td align="right">329</td>
+<td align="left">Jurassic Park</td>
+<td align="right">4.3515</td>
+</tr>
+<tr>
+<td align="right">1892</td>
+<td align="left">Return of the Jedi</td>
+<td align="right">4.21927</td>
+</tr>
+<tr>
+<td align="right">121</td>
+<td align="left">The Lord of the Rings: The Two Towers</td>
+<td align="right">3.98178</td>
+</tr>
+<tr>
+<td align="right">155</td>
+<td align="left">The Dark Knight</td>
+<td align="right">3.87451</td>
+</tr>
+</tbody>
+</table>
+<p>So the original Star Wars is the best movie.</p>
+<p>But now that we have this standardized metric, let&rsquo;s have a little fun with it.
+It&rsquo;s been said that classic movies are better, and that modern movies are just terrible in comparison.
+We can graph time against the PCA rating to see if that&rsquo;s true</p>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/pca_years.png" data-caption="A caption">
+
+
+  <img src="/img/pca_years.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption>
+    A caption
+  </figcaption>
+
+
+</figure>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<figure>
+
+
+  <a data-fancybox="" href="/img/pca_genre.png" data-caption="A caption">
+
+
+  <img src="/img/pca_genre.png" alt=""  >
+</a>
+
+
+  
+  
+  <figcaption>
+    A caption
+  </figcaption>
+
+
+</figure>
+
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/movie_data/&amp;text=What%20makes%20the%20best%20movie?" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/movie_data/&amp;t=What%20makes%20the%20best%20movie?" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=What%20makes%20the%20best%20movie?&amp;body=/post/movie_data/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/movie_data/&amp;title=What%20makes%20the%20best%20movie?" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=What%20makes%20the%20best%20movie?%20/post/movie_data/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/movie_data/&amp;title=What%20makes%20the%20best%20movie?" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Erik Seguinte</a></h5>
+      <h6 class="card-subtitle">Apple Certified Macintosh Technician and Data Science Student</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:erikseguinte@me.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/Primefactorx01" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ErikSeguinte" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.0630fec5958cb075a5a38f042b3ddde6.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

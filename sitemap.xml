@@ -33,23 +33,43 @@
   </url>
   
   <url>
+    <loc>/post/</loc>
+    <lastmod>2020-03-03T19:21:02-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/movie_data/</loc>
+    <lastmod>2020-03-03T19:21:02-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/admin/</loc>
+    <lastmod>2020-02-08T10:37:44-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2020-02-08T10:37:44-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/dnd/</loc>
+    <lastmod>2020-02-08T10:37:44-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/dnd-data/</loc>
     <lastmod>2020-02-08T10:37:44-08:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>/tags/</loc>
     <lastmod>2020-02-08T10:37:44-08:00</lastmod>
   </url>
   
   <url>
     <loc>/post/writing-technical-content/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/admin/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -60,11 +80,6 @@
   <url>
     <loc>/publication/preprint/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -80,11 +95,6 @@
   <url>
     <loc>/tags/source-themes/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
