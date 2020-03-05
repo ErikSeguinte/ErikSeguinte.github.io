@@ -504,6 +504,19 @@ We can graph time against the PCA rating to see if that&amp;rsquo;s true. And fr
 &lt;/figure&gt;
 
 &lt;p&gt;From the data, the clear loser are Foreign Films, and that War movies are a safe bet.&lt;/p&gt;
+&lt;h2 id=&#34;what-else&#34;&gt;What else?&lt;/h2&gt;
+&lt;p&gt;Clearly, there are other things that could affect the rating of a movie. Here are possible other insights that might be scraped from the data&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Who is the best director of all time?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Which movies had the greatest return on investment given their budget and their revenue?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Should Directors stay in their lane? In other words, are directors who have a body of work that is majority one genre able to switch to a completely different genre and still make movies that are just as good? For example, a renowned Horror director might decide to do a romance film. How do they do? How about the other way around?&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
