@@ -637,7 +637,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    5 min read
+    4 min read
   </span>
   
 
@@ -685,278 +685,206 @@
 <p>Using data from Kaggle&rsquo;s 
 <a href="https://www.kaggle.com/rounakbanik/the-movies-dataset" target="_blank" rel="noopener">The Movies Dataset</a>, let&rsquo;s determine what makes the best movies.
 The Data set gives us ratings from The Movie Database(tMDb), where movies are rated out of 10. And the top 10 movies are:</p>
-<table>
-<thead>
-<tr>
-<th align="right">ID</th>
-<th align="left">title</th>
-<th align="right">vote_average</th>
-<th align="right">vote_count</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">238</td>
-<td align="left">The Godfather</td>
-<td align="right">8.5</td>
-<td align="right">6024</td>
-</tr>
-<tr>
-<td align="right">278</td>
-<td align="left">The Shawshank Redemption</td>
-<td align="right">8.5</td>
-<td align="right">8358</td>
-</tr>
-<tr>
-<td align="right">129</td>
-<td align="left">Spirited Away</td>
-<td align="right">8.3</td>
-<td align="right">3968</td>
-</tr>
-<tr>
-<td align="right">155</td>
-<td align="left">The Dark Knight</td>
-<td align="right">8.3</td>
-<td align="right">12269</td>
-</tr>
-<tr>
-<td align="right">240</td>
-<td align="left">The Godfather: Part II</td>
-<td align="right">8.3</td>
-<td align="right">3418</td>
-</tr>
-<tr>
-<td align="right">424</td>
-<td align="left">Schindler&rsquo;s List</td>
-<td align="right">8.3</td>
-<td align="right">4436</td>
-</tr>
-<tr>
-<td align="right">510</td>
-<td align="left">One Flew Over the Cuckoo&rsquo;s Nest</td>
-<td align="right">8.3</td>
-<td align="right">3001</td>
-</tr>
-<tr>
-<td align="right">539</td>
-<td align="left">Psycho</td>
-<td align="right">8.3</td>
-<td align="right">2405</td>
-</tr>
-<tr>
-<td align="right">550</td>
-<td align="left">Fight Club</td>
-<td align="right">8.3</td>
-<td align="right">9678</td>
-</tr>
-<tr>
-<td align="right">637</td>
-<td align="left">Life Is Beautiful</td>
-<td align="right">8.3</td>
-<td align="right">3643</td>
-</tr>
-</tbody>
-</table>
+<style  type="text/css" >
+</style>
+<table id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5" ><thead>    <tr>        <th class="col_heading level0 col0" >title</th>        <th class="col_heading level0 col1" >vote_average</th>        <th class="col_heading level0 col2" >vote_count</th>    </tr></thead><tbody>
+                <tr>
+                                <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row0_col0" class="data row0 col0" >The Godfather</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row0_col1" class="data row0 col1" >8.50</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row0_col2" class="data row0 col2" >6,024</td>
+            </tr>
+            <tr>
+                                <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row1_col0" class="data row1 col0" >The Shawshank Redemption</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row1_col1" class="data row1 col1" >8.50</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row1_col2" class="data row1 col2" >8,358</td>
+            </tr>
+            <tr>
+                                <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row2_col0" class="data row2 col0" >Spirited Away</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row2_col1" class="data row2 col1" >8.30</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row2_col2" class="data row2 col2" >3,968</td>
+            </tr>
+            <tr>
+                                <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row3_col0" class="data row3 col0" >The Dark Knight</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row3_col1" class="data row3 col1" >8.30</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row3_col2" class="data row3 col2" >12,269</td>
+            </tr>
+            <tr>
+                                <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row4_col0" class="data row4 col0" >The Godfather: Part II</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row4_col1" class="data row4 col1" >8.30</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row4_col2" class="data row4 col2" >3,418</td>
+            </tr>
+            <tr>
+                                <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row5_col0" class="data row5 col0" >Schindler's List</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row5_col1" class="data row5 col1" >8.30</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row5_col2" class="data row5 col2" >4,436</td>
+            </tr>
+            <tr>
+                                <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row6_col0" class="data row6 col0" >One Flew Over the Cuckoo's Nest</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row6_col1" class="data row6 col1" >8.30</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row6_col2" class="data row6 col2" >3,001</td>
+            </tr>
+            <tr>
+                                <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row7_col0" class="data row7 col0" >Psycho</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row7_col1" class="data row7 col1" >8.30</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row7_col2" class="data row7 col2" >2,405</td>
+            </tr>
+            <tr>
+                                <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row8_col0" class="data row8 col0" >Fight Club</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row8_col1" class="data row8 col1" >8.30</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row8_col2" class="data row8 col2" >9,678</td>
+            </tr>
+            <tr>
+                                <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row9_col0" class="data row9 col0" >Life Is Beautiful</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row9_col1" class="data row9 col1" >8.30</td>
+                        <td id="T_3d3cd096_5ea2_11ea_bce8_00155d5a97a5row9_col2" class="data row9 col2" >3,643</td>
+            </tr>
+    </tbody></table>
 <h2 id="other-ratings">Other Ratings</h2>
 <p>But that&rsquo;s not the whole story. Included in the database is a set of 26,024,289 individual ratings by users. Since we&rsquo;re not making individual movie recomendations &ndash; that&rsquo;s another unit &ndash; let&rsquo;s aggregate the scores into a mean, merge them into the movie database, and see how that compares to the tMDB ratings. After averaging, we get the following top 10.</p>
-<table>
-<thead>
-<tr>
-<th align="right">ID</th>
-<th align="left">title</th>
-<th align="right">rating</th>
-<th align="right">num_votes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">858</td>
-<td align="left">Sleepless in Seattle</td>
-<td align="right">4.33981</td>
-<td align="right">57070</td>
-</tr>
-<tr>
-<td align="right">527</td>
-<td align="left">Once Were Warriors</td>
-<td align="right">4.26653</td>
-<td align="right">67662</td>
-</tr>
-<tr>
-<td align="right">2019</td>
-<td align="left">Hard Target</td>
-<td align="right">4.25507</td>
-<td align="right">13994</td>
-</tr>
-<tr>
-<td align="right">2959</td>
-<td align="left">License to Wed</td>
-<td align="right">4.23072</td>
-<td align="right">60024</td>
-</tr>
-<tr>
-<td align="right">1213</td>
-<td align="left">The Talented Mr. Ripley</td>
-<td align="right">4.17829</td>
-<td align="right">33987</td>
-</tr>
-<tr>
-<td align="right">926</td>
-<td align="left">Galaxy Quest</td>
-<td align="right">4.17458</td>
-<td align="right">5453</td>
-</tr>
-<tr>
-<td align="right">296</td>
-<td align="left">Terminator 3: Rise of the Machines</td>
-<td align="right">4.16998</td>
-<td align="right">87901</td>
-</tr>
-<tr>
-<td align="right">2324</td>
-<td align="left">Local Color</td>
-<td align="right">4.16706</td>
-<td align="right">25245</td>
-</tr>
-<tr>
-<td align="right">1248</td>
-<td align="left">Hannibal Rising</td>
-<td align="right">4.15724</td>
-<td align="right">5199</td>
-</tr>
-<tr>
-<td align="right">950</td>
-<td align="left">Ice Age: The Meltdown</td>
-<td align="right">4.15008</td>
-<td align="right">3628</td>
-</tr>
-</tbody>
-</table>
+<style  type="text/css" ></style>
+<table id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5" ><thead>    <tr>        <th class="col_heading level0 col0" >title</th>        <th class="col_heading level0 col1" >rating</th>        <th class="col_heading level0 col2" >num_votes</th>    </tr></thead><tbody>
+                <tr>
+                                <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row0_col0" class="data row0 col0" >Sleepless in Seattle</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row0_col1" class="data row0 col1" >4.34</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row0_col2" class="data row0 col2" >57,070</td>
+            </tr>
+            <tr>
+                                <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row1_col0" class="data row1 col0" >Once Were Warriors</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row1_col1" class="data row1 col1" >4.27</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row1_col2" class="data row1 col2" >67,662</td>
+            </tr>
+            <tr>
+                                <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row2_col0" class="data row2 col0" >Hard Target</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row2_col1" class="data row2 col1" >4.26</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row2_col2" class="data row2 col2" >13,994</td>
+            </tr>
+            <tr>
+                                <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row3_col0" class="data row3 col0" >License to Wed</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row3_col1" class="data row3 col1" >4.23</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row3_col2" class="data row3 col2" >60,024</td>
+            </tr>
+            <tr>
+                                <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row4_col0" class="data row4 col0" >The Talented Mr. Ripley</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row4_col1" class="data row4 col1" >4.18</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row4_col2" class="data row4 col2" >33,987</td>
+            </tr>
+            <tr>
+                                <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row5_col0" class="data row5 col0" >Galaxy Quest</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row5_col1" class="data row5 col1" >4.17</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row5_col2" class="data row5 col2" >5,453</td>
+            </tr>
+            <tr>
+                                <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row6_col0" class="data row6 col0" >Terminator 3: Rise of the Machines</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row6_col1" class="data row6 col1" >4.17</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row6_col2" class="data row6 col2" >87,901</td>
+            </tr>
+            <tr>
+                                <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row7_col0" class="data row7 col0" >Local Color</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row7_col1" class="data row7 col1" >4.17</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row7_col2" class="data row7 col2" >25,245</td>
+            </tr>
+            <tr>
+                                <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row8_col0" class="data row8 col0" >Hannibal Rising</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row8_col1" class="data row8 col1" >4.16</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row8_col2" class="data row8 col2" >5,199</td>
+            </tr>
+            <tr>
+                                <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row9_col0" class="data row9 col0" >Ice Age: The Meltdown</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row9_col1" class="data row9 col1" >4.15</td>
+                        <td id="T_90ada70a_5ea2_11ea_bce8_00155d5a97a5row9_col2" class="data row9 col2" >3,628</td>
+            </tr>
+    </tbody></table>
 <h2 id="revenue">Revenue</h2>
 <p>It&rsquo;s a very different list, with zero overlap. If only there was a way to scale or combine them. But we&rsquo;re not done yet. There&rsquo;s another way you could define the best movies. And this is the one the studios care about. How much money they made. The Dataset also provides revenue, so let&rsquo;s see what that list looks like.</p>
-<table>
-<thead>
-<tr>
-<th align="right">ID</th>
-<th align="left">title</th>
-<th align="right">revenue</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">597</td>
-<td align="left">Titanic</td>
-<td align="right">1.84503e+09</td>
-</tr>
-<tr>
-<td align="right">122</td>
-<td align="left">The Lord of the Rings: The Return of the King</td>
-<td align="right">1.11889e+09</td>
-</tr>
-<tr>
-<td align="right">58</td>
-<td align="left">Pirates of the Caribbean: Dead Man&rsquo;s Chest</td>
-<td align="right">1.06566e+09</td>
-</tr>
-<tr>
-<td align="right">1865</td>
-<td align="left">Pirates of the Caribbean: On Stranger Tides</td>
-<td align="right">1.04571e+09</td>
-</tr>
-<tr>
-<td align="right">155</td>
-<td align="left">The Dark Knight</td>
-<td align="right">1.00456e+09</td>
-</tr>
-<tr>
-<td align="right">671</td>
-<td align="left">Harry Potter and the Philosopher&rsquo;s Stone</td>
-<td align="right">9.76476e+08</td>
-</tr>
-<tr>
-<td align="right">12</td>
-<td align="left">Finding Nemo</td>
-<td align="right">9.40336e+08</td>
-</tr>
-<tr>
-<td align="right">767</td>
-<td align="left">Harry Potter and the Half-Blood Prince</td>
-<td align="right">9.33959e+08</td>
-</tr>
-<tr>
-<td align="right">121</td>
-<td align="left">The Lord of the Rings: The Two Towers</td>
-<td align="right">9.26287e+08</td>
-</tr>
-<tr>
-<td align="right">1893</td>
-<td align="left">Star Wars: Episode I - The Phantom Menace</td>
-<td align="right">9.24318e+08</td>
-</tr>
-</tbody>
-</table>
+<style  type="text/css" ></style>
+<table id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5" ><thead>    <tr>        <th class="col_heading level0 col0" >title</th>        <th class="col_heading level0 col1" >revenue</th>    </tr></thead><tbody>
+                <tr>
+                                <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row0_col0" class="data row0 col0" >Titanic</td>
+                        <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row0_col1" class="data row0 col1" >$1,845,034,188</td>
+            </tr>
+            <tr>
+                                <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row1_col0" class="data row1 col0" >The Lord of the Rings: The Return of the King</td>
+                        <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row1_col1" class="data row1 col1" >$1,118,888,979</td>
+            </tr>
+            <tr>
+                                <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row2_col0" class="data row2 col0" >Pirates of the Caribbean: Dead Man's Chest</td>
+                        <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row2_col1" class="data row2 col1" >$1,065,659,812</td>
+            </tr>
+            <tr>
+                                <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row3_col0" class="data row3 col0" >Pirates of the Caribbean: On Stranger Tides</td>
+                        <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row3_col1" class="data row3 col1" >$1,045,713,802</td>
+            </tr>
+            <tr>
+                                <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row4_col0" class="data row4 col0" >The Dark Knight</td>
+                        <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row4_col1" class="data row4 col1" >$1,004,558,444</td>
+            </tr>
+            <tr>
+                                <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row5_col0" class="data row5 col0" >Harry Potter and the Philosopher's Stone</td>
+                        <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row5_col1" class="data row5 col1" >$976,475,550</td>
+            </tr>
+            <tr>
+                                <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row6_col0" class="data row6 col0" >Finding Nemo</td>
+                        <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row6_col1" class="data row6 col1" >$940,335,536</td>
+            </tr>
+            <tr>
+                                <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row7_col0" class="data row7 col0" >Harry Potter and the Half-Blood Prince</td>
+                        <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row7_col1" class="data row7 col1" >$933,959,197</td>
+            </tr>
+            <tr>
+                                <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row8_col0" class="data row8 col0" >The Lord of the Rings: The Two Towers</td>
+                        <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row8_col1" class="data row8 col1" >$926,287,400</td>
+            </tr>
+            <tr>
+                                <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row9_col0" class="data row9 col0" >Star Wars: Episode I - The Phantom Menace</td>
+                        <td id="T_931146f6_5ea1_11ea_bce8_00155d5a97a5row9_col1" class="data row9 col1" >$924,317,558</td>
+            </tr>
+    </tbody></table>
 <h3 id="adjusted-revenue">Adjusted Revenue</h3>
 <p>Another new list. But that&rsquo;s not quite right. The value of a dollar has changed over time. 1 billion 1920 dollars isn&rsquo;t the same as 1 billion 2020 dollars. So using a third dataset provided by the federal government, we can adjust the values based on the year that these movies were released.</p>
-<table>
-<thead>
-<tr>
-<th align="right"></th>
-<th align="left">title</th>
-<th align="right">adjusted_revenue</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">11</td>
-<td align="left">Star Wars</td>
-<td align="right">3.02873e+09</td>
-</tr>
-<tr>
-<td align="right">597</td>
-<td align="left">Titanic</td>
-<td align="right">2.72113e+09</td>
-</tr>
-<tr>
-<td align="right">601</td>
-<td align="left">E.T. the Extra-Terrestrial</td>
-<td align="right">1.94532e+09</td>
-</tr>
-<tr>
-<td align="right">1891</td>
-<td align="left">The Empire Strikes Back</td>
-<td align="right">1.54683e+09</td>
-</tr>
-<tr>
-<td align="right">329</td>
-<td align="left">Jurassic Park</td>
-<td align="right">1.50785e+09</td>
-</tr>
-<tr>
-<td align="right">122</td>
-<td align="left">The Lord of the Rings: The Return of the King</td>
-<td align="right">1.4399e+09</td>
-</tr>
-<tr>
-<td align="right">238</td>
-<td align="left">The Godfather</td>
-<td align="right">1.38727e+09</td>
-</tr>
-<tr>
-<td align="right">1892</td>
-<td align="left">Return of the Jedi</td>
-<td align="right">1.36123e+09</td>
-</tr>
-<tr>
-<td align="right">1893</td>
-<td align="left">Star Wars: Episode I - The Phantom Menace</td>
-<td align="right">1.31364e+09</td>
-</tr>
-<tr>
-<td align="right">671</td>
-<td align="left">Harry Potter and the Philosopher&rsquo;s Stone</td>
-<td align="right">1.30554e+09</td>
-</tr>
-</tbody>
-</table>
+<style  type="text/css" >
+</style>
+<table id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5" ><thead>    <tr>        <th class="col_heading level0 col0" >title</th>        <th class="col_heading level0 col1" >adjusted revenue</th>    </tr></thead><tbody>
+                <tr>
+                                <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row0_col0" class="data row0 col0" >Star Wars</td>
+                        <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row0_col1" class="data row0 col1" >$3,028,727,803</td>
+            </tr>
+            <tr>
+                                <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row1_col0" class="data row1 col0" >Titanic</td>
+                        <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row1_col1" class="data row1 col1" >$2,721,127,532</td>
+            </tr>
+            <tr>
+                                <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row2_col0" class="data row2 col0" >E.T. the Extra-Terrestrial</td>
+                        <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row2_col1" class="data row2 col1" >$1,945,321,985</td>
+            </tr>
+            <tr>
+                                <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row3_col0" class="data row3 col0" >The Empire Strikes Back</td>
+                        <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row3_col1" class="data row3 col1" >$1,546,829,516</td>
+            </tr>
+            <tr>
+                                <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row4_col0" class="data row4 col0" >Jurassic Park</td>
+                        <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row4_col1" class="data row4 col1" >$1,507,846,186</td>
+            </tr>
+            <tr>
+                                <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row5_col0" class="data row5 col0" >The Lord of the Rings: The Return of the King</td>
+                        <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row5_col1" class="data row5 col1" >$1,439,899,368</td>
+            </tr>
+            <tr>
+                                <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row6_col0" class="data row6 col0" >The Godfather</td>
+                        <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row6_col1" class="data row6 col1" >$1,387,267,307</td>
+            </tr>
+            <tr>
+                                <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row7_col0" class="data row7 col0" >Return of the Jedi</td>
+                        <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row7_col1" class="data row7 col1" >$1,361,232,958</td>
+            </tr>
+            <tr>
+                                <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row8_col0" class="data row8 col0" >Star Wars: Episode I - The Phantom Menace</td>
+                        <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row8_col1" class="data row8 col1" >$1,313,638,874</td>
+            </tr>
+            <tr>
+                                <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row9_col0" class="data row9 col0" >Harry Potter and the Philosopher's Stone</td>
+                        <td id="T_0fa9bf4c_5ea0_11ea_bce8_00155d5a97a5row9_col1" class="data row9 col1" >$1,305,536,965</td>
+            </tr>
+    </tbody></table>
 <h2 id="pca-rating">PCA Rating</h2>
 <p>So now we have 3 different metrics with scales that go from 0-5 for one, to billions for another. Which should we use to determine the best movie? With the magic of principle component analysis, we don&rsquo;t have to decide! After waving the PCA wand combining the ratings from 2 different databases along with the adjusted revenue, we get the following top 10 movies.</p>
 <table>
