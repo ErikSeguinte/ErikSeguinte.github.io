@@ -33,7 +33,37 @@
   </url>
   
   <url>
+    <loc>/tags/build-week/</loc>
+    <lastmod>2020-03-03T19:21:02-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/data/</loc>
+    <lastmod>2020-03-03T19:21:02-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/data-science/</loc>
+    <lastmod>2020-03-03T19:21:02-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/dspt5/</loc>
+    <lastmod>2020-03-03T19:21:02-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/lambda/</loc>
+    <lastmod>2020-03-03T19:21:02-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
+    <lastmod>2020-03-03T19:21:02-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
     <lastmod>2020-03-03T19:21:02-08:00</lastmod>
   </url>
   
@@ -59,11 +89,6 @@
   
   <url>
     <loc>/post/dnd-data/</loc>
-    <lastmod>2020-02-08T10:37:44-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-02-08T10:37:44-08:00</lastmod>
   </url>
   
