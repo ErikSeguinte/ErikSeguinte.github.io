@@ -12,5 +12,85 @@
       <link>/tags/</link>
     </image>
     
+    <item>
+      <title>build week</title>
+      <link>/tags/build-week/</link>
+      <pubDate>Tue, 03 Mar 2020 19:21:02 -0800</pubDate>
+      <guid>/tags/build-week/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data</title>
+      <link>/tags/data/</link>
+      <pubDate>Tue, 03 Mar 2020 19:21:02 -0800</pubDate>
+      <guid>/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data science</title>
+      <link>/tags/data-science/</link>
+      <pubDate>Tue, 03 Mar 2020 19:21:02 -0800</pubDate>
+      <guid>/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DSPT5</title>
+      <link>/tags/dspt5/</link>
+      <pubDate>Tue, 03 Mar 2020 19:21:02 -0800</pubDate>
+      <guid>/tags/dspt5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lambda school</title>
+      <link>/tags/lambda-school/</link>
+      <pubDate>Tue, 03 Mar 2020 19:21:02 -0800</pubDate>
+      <guid>/tags/lambda-school/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dnd</title>
+      <link>/tags/dnd/</link>
+      <pubDate>Sat, 08 Feb 2020 10:37:44 -0800</pubDate>
+      <guid>/tags/dnd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Source Themes</title>
+      <link>/tags/source-themes/</link>
+      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/source-themes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>/tags/deep-learning/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Demo</title>
+      <link>/tags/demo/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>/tags/demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Academic</title>
+      <link>/tags/academic/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>/tags/academic/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

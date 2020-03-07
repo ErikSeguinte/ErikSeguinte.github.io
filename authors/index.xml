@@ -12,5 +12,22 @@
       <link>/authors/</link>
     </image>
     
+    <item>
+      <title></title>
+      <link>/authors/admin/</link>
+      <pubDate>Sat, 08 Feb 2020 10:37:44 -0800</pubDate>
+      <guid>/authors/admin/</guid>
+      <description>&lt;p&gt;Erik Seguinte is a self-taught python programmer with an interest in data science.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Robert Ford</title>
+      <link>/authors/robert-ford/</link>
+      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>/authors/robert-ford/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
