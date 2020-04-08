@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Exploration | Erik Seguinte</title>
+    <link>/tags/data-exploration/</link>
+      <atom:link href="/tags/data-exploration/index.xml" rel="self" type="application/rss+xml" />
+    <description>Data Exploration</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Data Exploration</title>
+      <link>/tags/data-exploration/</link>
+    </image>
+    
+    <item>
+      <title>Movie Data</title>
+      <link>/project/movie-data/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>/project/movie-data/</guid>
+      <description>&lt;p&gt;Post: 
+&lt;a href=&#34;/post/movie_data/&#34;&gt;Link&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
