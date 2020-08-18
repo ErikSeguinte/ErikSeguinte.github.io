@@ -7,7 +7,7 @@
     <description>build week</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 03 Mar 2020 19:21:02 -0800</lastBuildDate>
     <image>
-      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>build week</title>
       <link>/tags/build-week/</link>
     </image>
@@ -319,6 +319,11 @@ Plotly.newPlot(
 
 
 
+
+  
+
+
+
   
   
 
@@ -332,7 +337,7 @@ Plotly.newPlot(
 
 
 
-&lt;figure&gt;
+&lt;figure id=&#34;figure-pca-rating-of-genres&#34;&gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;/post/movie_data/pca_genre_hu43372f13ad615accc4f9584fc179c981_32195_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;PCA rating of Genres&#34;&gt;
