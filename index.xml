@@ -484,9 +484,9 @@ if (document.getElementById(&#34;05cad4cf-1da3-4884-92f3-986c162f6166&#34;)) {
     </item>
     
     <item>
-      <title>Dnd Data</title>
+      <title>Dungeons and Dragons and Stats</title>
       <link>/post/dnd-data/</link>
-      <pubDate>Sat, 08 Feb 2020 10:37:44 -0800</pubDate>
+      <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
       <guid>/post/dnd-data/</guid>
       <description>&lt;h1 id=&#34;dungeons-and-dragons-and-stats&#34;&gt;Dungeons And Dragons and Stats&lt;/h1&gt;
 &lt;p&gt;Dungeons and Dragons is a Tabletop Roleplaying game (RPG) produced by Wizards of the coast.&lt;/p&gt;
@@ -882,7 +882,7 @@ dnd_df[[&#39;just_class2&#39;, &#39;just_level2&#39;]] = pd.DataFrame(dnd_df[&#3
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;dnd_df[&#39;just_class1&#39;].value_counts(normalize=True).plot(kind=&#39;barh&#39;);
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./index_15_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index_files/index_15_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;There&amp;rsquo;s a lot in there! Let&amp;rsquo;s filter our df to only include the top 12 or so classes.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;def graph_counts(df, label):
   ax = sns.countplot(x = label, data=df,)
@@ -946,7 +946,7 @@ unusual_classes
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;graph_counts(dnd_df, &#39;just_class1&#39;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./index_26_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index_files/index_26_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;race_and_class = pd.crosstab(dnd_df[&#39;just_class1&#39;], dnd_df[&#39;race&#39;]).T
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;race_and_class
@@ -2030,7 +2030,7 @@ Name: race, Length: 139, dtype: int64
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;graph_counts(dnd_df, &#39;race&#39;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./index_36_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index_files/index_36_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;race_and_class = pd.crosstab(dnd_df[&#39;race&#39;], dnd_df[&#39;just_class1&#39;])
 race_and_class_margins = pd.crosstab(dnd_df[&#39;race&#39;], dnd_df[&#39;just_class1&#39;], margins = True)
 race_and_class_normalized = pd.crosstab(dnd_df[&#39;race&#39;], dnd_df[&#39;just_class1&#39;], normalize=&#39;all&#39;)
@@ -2369,7 +2369,7 @@ sns.heatmap(race_and_class_normalized, annot = True)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x7f902a327668&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./index_39_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index_files/index_39_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;fig = go.Figure(
     data = go.Heatmap(
         z=race_and_class,
@@ -2623,7 +2623,7 @@ stats.chi2_contingency(races_and_alignments)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9028445a58&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./index_49_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;index_files/index_49_1.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;h1 id=&#34;are-paladins-more-lawful-than-rogues&#34;&gt;Are paladins more lawful than rogues?&lt;/h1&gt;
 &lt;p&gt;Clasically, Paladins are your uptight, holier than thou, letter of the law types. While Rogues were the more chaotic force. Does this hold up in our data?&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;paladins_and_rogues = dnd_df[(dnd_df[&#39;just_class1&#39;] == &#39;Paladin&#39;)|(dnd_df[&#39;just_class1&#39;] == &#39;Rogue&#39;)]

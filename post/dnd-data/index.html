@@ -256,16 +256,16 @@ import pandas as pd import plotly.graph_objects as go import plotly.express as p
   
   <meta property="og:site_name" content="Erik Seguinte">
   <meta property="og:url" content="/post/dnd-data/">
-  <meta property="og:title" content="Dnd Data | Erik Seguinte">
+  <meta property="og:title" content="Dungeons and Dragons and Stats | Erik Seguinte">
   <meta property="og:description" content="Dungeons And Dragons and Stats Dungeons and Dragons is a Tabletop Roleplaying game (RPG) produced by Wizards of the coast.
 Data from https://github.com/oganm/dnddata
 import pandas as pd import plotly.graph_objects as go import plotly.express as px import seaborn as sns import matplotlib.pyplot as plt import numpy as np import scipy.stats as stats sns.set(style=&quot;darkgrid&quot;)  Lets load in the dataset. Note that this is a tab seperated table. We&rsquo;ll use \t as the seperator to get it to load in right."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-02-08T10:37:44-08:00">
+      <meta property="article:published_time" content="2020-02-07T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-02-08T10:37:44-08:00">
+    <meta property="article:modified_time" content="2020-02-07T00:00:00&#43;00:00">
   
 
   
@@ -291,10 +291,10 @@ import pandas as pd import plotly.graph_objects as go import plotly.express as p
     "@type": "WebPage",
     "@id": "/post/dnd-data/"
   },
-  "headline": "Dnd Data",
+  "headline": "Dungeons and Dragons and Stats",
   
-  "datePublished": "2020-02-08T10:37:44-08:00",
-  "dateModified": "2020-02-08T10:37:44-08:00",
+  "datePublished": "2020-02-07T00:00:00Z",
+  "dateModified": "2020-02-07T00:00:00Z",
   
   "publisher": {
     "@type": "Organization",
@@ -322,7 +322,7 @@ import pandas as pd import plotly.graph_objects as go import plotly.express as p
 
 
 
-  <title>Dnd Data | Erik Seguinte</title>
+  <title>Dungeons and Dragons and Stats | Erik Seguinte</title>
 
 </head>
 
@@ -553,7 +553,7 @@ import pandas as pd import plotly.graph_objects as go import plotly.express as p
   
   
 <div class="article-container pt-3">
-  <h1>Dnd Data</h1>
+  <h1>Dungeons and Dragons and Stats</h1>
 
   
 
@@ -565,16 +565,6 @@ import pandas as pd import plotly.graph_objects as go import plotly.express as p
 
   
   
-  
-  
-  <div>
-    
-
-  
-  <span ><a href="/authors/admin/">admin</a></span>
-  </div>
-  
-  
 
   
   <span class="article-date">
@@ -582,7 +572,7 @@ import pandas as pd import plotly.graph_objects as go import plotly.express as p
     
       
     
-    Feb 8, 2020
+    Feb 7, 2020
   </span>
   
 
@@ -1021,7 +1011,7 @@ dnd_df[['just_class2', 'just_level2']] = pd.DataFrame(dnd_df['class2'].str.rspli
 </code></pre>
 <pre><code>dnd_df['just_class1'].value_counts(normalize=True).plot(kind='barh');
 </code></pre>
-<p><img src="./index_15_0.png" alt="png"></p>
+<p><img src="index_files/index_15_0.png" alt="png"></p>
 <p>There&rsquo;s a lot in there! Let&rsquo;s filter our df to only include the top 12 or so classes.</p>
 <pre><code>def graph_counts(df, label):
   ax = sns.countplot(x = label, data=df,)
@@ -1085,7 +1075,7 @@ unusual_classes
 </code></pre>
 <pre><code>graph_counts(dnd_df, 'just_class1')
 </code></pre>
-<p><img src="./index_26_0.png" alt="png"></p>
+<p><img src="index_files/index_26_0.png" alt="png"></p>
 <pre><code>race_and_class = pd.crosstab(dnd_df['just_class1'], dnd_df['race']).T
 </code></pre>
 <pre><code>race_and_class
@@ -2169,7 +2159,7 @@ Name: race, Length: 139, dtype: int64
 </code></pre>
 <pre><code>graph_counts(dnd_df, 'race')
 </code></pre>
-<p><img src="./index_36_0.png" alt="png"></p>
+<p><img src="index_files/index_36_0.png" alt="png"></p>
 <pre><code>race_and_class = pd.crosstab(dnd_df['race'], dnd_df['just_class1'])
 race_and_class_margins = pd.crosstab(dnd_df['race'], dnd_df['just_class1'], margins = True)
 race_and_class_normalized = pd.crosstab(dnd_df['race'], dnd_df['just_class1'], normalize='all')
@@ -2508,7 +2498,7 @@ sns.heatmap(race_and_class_normalized, annot = True)
 </code></pre>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f902a327668&gt;
 </code></pre>
-<p><img src="./index_39_1.png" alt="png"></p>
+<p><img src="index_files/index_39_1.png" alt="png"></p>
 <pre><code>fig = go.Figure(
     data = go.Heatmap(
         z=race_and_class,
@@ -2762,7 +2752,7 @@ stats.chi2_contingency(races_and_alignments)
 </code></pre>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f9028445a58&gt;
 </code></pre>
-<p><img src="./index_49_1.png" alt="png"></p>
+<p><img src="index_files/index_49_1.png" alt="png"></p>
 <h1 id="are-paladins-more-lawful-than-rogues">Are paladins more lawful than rogues?</h1>
 <p>Clasically, Paladins are your uptight, holier than thou, letter of the law types. While Rogues were the more chaotic force. Does this hold up in our data?</p>
 <pre><code>paladins_and_rogues = dnd_df[(dnd_df['just_class1'] == 'Paladin')|(dnd_df['just_class1'] == 'Rogue')]
@@ -2892,12 +2882,6 @@ f_and_w_ct
 
 
 
-<div class="article-tags">
-  
-  <a class="badge badge-light" href="/tags/dnd/">dnd</a>
-  
-</div>
-
 
 
 <div class="share-box" aria-hidden="true">
@@ -2911,7 +2895,7 @@ f_and_w_ct
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/dnd-data/&amp;text=Dnd%20Data" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/post/dnd-data/&amp;text=Dungeons%20and%20Dragons%20and%20Stats" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -2924,7 +2908,7 @@ f_and_w_ct
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/dnd-data/&amp;t=Dnd%20Data" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/post/dnd-data/&amp;t=Dungeons%20and%20Dragons%20and%20Stats" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -2937,7 +2921,7 @@ f_and_w_ct
       
       
       <li>
-        <a href="mailto:?subject=Dnd%20Data&amp;body=/post/dnd-data/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Dungeons%20and%20Dragons%20and%20Stats&amp;body=/post/dnd-data/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -2950,7 +2934,7 @@ f_and_w_ct
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/dnd-data/&amp;title=Dnd%20Data" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/post/dnd-data/&amp;title=Dungeons%20and%20Dragons%20and%20Stats" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -2963,7 +2947,7 @@ f_and_w_ct
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Dnd%20Data%20/post/dnd-data/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Dungeons%20and%20Dragons%20and%20Stats%20/post/dnd-data/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -2976,7 +2960,7 @@ f_and_w_ct
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/dnd-data/&amp;title=Dnd%20Data" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/post/dnd-data/&amp;title=Dungeons%20and%20Dragons%20and%20Stats" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -2996,8 +2980,7 @@ f_and_w_ct
 
 
   
-    
-    
+  
 
 
 
@@ -3079,7 +3062,6 @@ f_and_w_ct
   
 
 
-  
 
 
 
